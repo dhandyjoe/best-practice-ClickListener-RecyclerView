@@ -6,11 +6,10 @@ binding.rvMovie.adapter = data
 
 // Intent to Detail Page
 
-data.setOnClickListener(object : MovieAdapter.OnClickListener {
-    override fun onClick(position: Int, model: ModelMovie) {
+data.setOnItemClickCallback(object : MovieAdapter.OnItemClickCallback {
+    override fun onItemClicked(data: Hero) {
         val intent = Intent(this@MainActivity, DetailActivity::class.java)
-        intent.putExtra(EXTRA_MOVIE_DETAILS, model)
+        intent.putExtra(EXTRA_MOVIE_DETAILS, data)
         startActivity(intent)
-     }
+    }
 })
-
